@@ -8,14 +8,27 @@
 <body>
 	
 
-<div class="g-signin2" data-onsuccess="onSignIn"></div>
+<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 <script>
 	function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
+  var id, name, image_url, email;
+  
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  id = profile.getId();
+  document.getElementById('id').innerHTML = id;
+  
   console.log('Name: ' + profile.getName());
+  name = profile.getName();
+  document.getElementById('name').innerHTML = name;
+
   console.log('Image URL: ' + profile.getImageUrl());
+  image_url = profile.getImageUrl();
+  document.getElementById('image_url').innerHTML = image_url;
+
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  email = profile.getEmail();
+  document.getElementById('email').innerHTML = email;
 }
 </script>
 <script>
@@ -23,7 +36,18 @@
       console.log('Signed in as: ' + googleUser.getBasicProfile().getName());
     }
   </script>
-<a href="#" onclick="signOut();">Sign out</a>
+<div>
+  <p> ID: </p>
+  <p id="id"></p>
+  <p> Name: </p>
+  <p id="name"></p>
+  <p> Image URL: </p>
+  <p id="image_url"></p>
+  <p> Email: </p>
+  <p id="email"></p>
+
+<p><a href="#" onclick="signOut();">Sign out</a></p>
+</div>
 <script>
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
