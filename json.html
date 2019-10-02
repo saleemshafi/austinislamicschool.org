@@ -133,7 +133,9 @@
 
           if( name ) {
             obj.values.push(value);
+            console.log('1: ' + obj)
           }
+          console.log('2: ' + obj)
         }
 
         gapi.client.sheets.spreadsheets.values.append({
