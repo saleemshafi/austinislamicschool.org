@@ -126,20 +126,17 @@
         var elements = form.querySelectorAll( "input, select, textarea" );
 
         var obj = {
-          "values" : [
-            {"name":"hasnain1", "check":"yes1", "select":"jQuery1", "message":"this is a test1", "email":"a@b.com1", "password":"12341"}
-          ]
+          "values" : []
         }
-/*
+
         for (var i in elements){
           var item = elements[i];
 
           obj.values.push({
-              "name" : item.name,
-              "check" : item.check
+              item.name, item.check, item.select, item.message, item.email, item.password
             })
         }
-*/
+
         gapi.client.sheets.spreadsheets.values.append({
          spreadsheetId: '1-Y17QgF-O3yFMIPXUGCUFrOjVkjVvmsLi-18IGo-Uoo',
          range: 'Sheet2',
