@@ -125,12 +125,14 @@
         };
         var elements = form.querySelectorAll( "input, select, textarea" );
 
-        elements.map(function function_name(item) {
-            obj.values.push({
+        for (var i in elements){
+          var item = elements[i];
+
+          obj.values.push({
               "name" : item.name,
               "check" : item.check
             })
-        })
+        }
 
         gapi.client.sheets.spreadsheets.values.append({
          spreadsheetId: '1-Y17QgF-O3yFMIPXUGCUFrOjVkjVvmsLi-18IGo-Uoo',
