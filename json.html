@@ -127,14 +127,16 @@
 
         var obj = {
           "values" : []
-        }
+        };
 
-        for (var i in elements){
-          var item = elements[i];
+        for( var i = 0; i < elements.length; ++i ) {
+          var element = elements[i];
+          var name = element.name;
+          var value = element.value;
 
-          obj.values.push({
-              item.name, item.check, item.select, item.message, item.email, item.password
-            })
+          if( name ) {
+            obj.values.push(value);
+          }
         }
 
         gapi.client.sheets.spreadsheets.values.append({
