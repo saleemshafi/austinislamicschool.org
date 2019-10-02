@@ -134,8 +134,9 @@
 
         gapi.client.sheets.spreadsheets.values.append({
          spreadsheetId: '1-Y17QgF-O3yFMIPXUGCUFrOjVkjVvmsLi-18IGo-Uoo',
-         range: 'Sheet1',
+         range: 'Sheet2',
          valueInputOption: 'USER_ENTERED',
+         insertDataOption:'INSERT_ROWS',
          resource: obj
       }).then((response) => {
         var result = response.result;
