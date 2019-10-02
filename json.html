@@ -121,13 +121,10 @@
 
         function toJSONString( form ) {
         var obj = {
-          values: []
-        };
-        var elements = form.querySelectorAll( "input, select, textarea" );
+          "values" : [],
+        }
 
-        var obj = {
-          "values" : []
-        };
+        var elements = form.querySelectorAll( "input, select, textarea" );
 
         for( var i = 0; i < elements.length; ++i ) {
           var element = elements[i];
