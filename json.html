@@ -120,17 +120,17 @@
       }
 
         function toJSONString( form ) {
-        var obj = {};
+        var obj = {
+          values: []
+        };
         var elements = form.querySelectorAll( "input, select, textarea" );
-        for( var i = 0; i < elements.length; ++i ) {
-          var element = elements[i];
-          var name = element.name;
-          var value = element.value;
 
-          if( name ) {
-            obj[ name ] = value;
-          }
-        }
+        elements.map(function function_name(item) {
+            obj.values.push({
+              "name" : item.name,
+              "check" : item.check
+            })
+        })
 
         gapi.client.sheets.spreadsheets.values.append({
          spreadsheetId: '1-Y17QgF-O3yFMIPXUGCUFrOjVkjVvmsLi-18IGo-Uoo',
@@ -141,6 +141,7 @@
       }).then((response) => {
         var result = response.result;
         console.log(`${result.updates.updatedCells} cells appended.`)
+        console.log(obj)
       });
 
         return JSON.stringify( obj );
