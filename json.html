@@ -120,7 +120,7 @@
       }
 
         function toJSONString( form ) {
-          /*
+          
         var obj = {
           "values" : [],
         }
@@ -136,13 +136,15 @@
             obj.values.push(value);            
           }
         }
-*/
+
+        /*
         var obj = {
           "values" : [
               ["123", "2019-09-30"],
               ["456", "2019-09-29"],
             ],
         }
+        */
 
         gapi.client.sheets.spreadsheets.values.append({
          spreadsheetId: '1-Y17QgF-O3yFMIPXUGCUFrOjVkjVvmsLi-18IGo-Uoo',
